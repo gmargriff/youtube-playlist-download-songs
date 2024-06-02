@@ -2,16 +2,24 @@
 
 Small Python3 Project using PyTube to download Youtube Playlists as MP4 (Audio only).
 
-## How to use
+## Pre-built packages
+
+1. Download the desired version from the [Releases page](https://github.com/gmargriff/youtube-playlist-download-songs/releases)
+2. Decompress in any folder
+3. Double click the executable
+4. Change URL to your playlist URL and click button to download
+
+## Building from source
+
+### How to use
 
 1. Make your playlist public available (or not listed, it cannot be private)
 2. Navigate to project folder
 3. Make sure you've got the virtual environment loaded `source .venv/bin/activate`
-4. Download your playlist `python3 ./download_from_url.py YOUR_PLAYLIST_URL`
+4. Run `python3 ./download_from_url.py` to open
+5. Change URL to your playlist URL and click button to download
 
-Eg.: `python3 ./download_from_url.py https://www.youtube.com/playlist?list=RDCLAK5uy_lwP-V7kSIhX3CJEV7zRd9P8Nj0F1l5RbY`
-
-## How to install
+### How to install
 
 1. Download this repo
 2. Navigate to project folder
