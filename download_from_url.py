@@ -1,6 +1,6 @@
 import os, re, math
 import tkinter as tk
-from tkinter import ttk, filedialog
+from tkinter import ttk, filedialog, messagebox
 from tqdm.auto import tqdm
 from pytube import YouTube, Playlist
 from mutagen.mp4 import MP4
@@ -15,6 +15,11 @@ def download_playlist_from_url(PLAYLIST_URL):
   break_button.place(x=190, y=95, width=400)
 
   playlist = Playlist(PLAYLIST_URL)
+  if(not playlist):
+    messagebox.showerror("Error", "Couldn't retrieve playlist data, make sure it exists and it's not private")
+    break_button.place_forget()
+    download_button.place(x=190, y=95, width=400)
+    return False
   playlist._video_regex = re.compile(r"\"url\":\"(/watch\?v=[\w-]*)")
   title = playlist.title
   whitelist = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
@@ -32,6 +37,7 @@ def download_playlist_from_url(PLAYLIST_URL):
     shoul_break = break_loop.get()
     if(shoul_break == 1):
       current_song.set("Download interrupted")
+      messagebox.showinfo("Interrupt","Download interrupted, downloaded " + str(current_downloaded) + " songs")
       break
 
     retries = 0
@@ -61,6 +67,7 @@ def download_playlist_from_url(PLAYLIST_URL):
   last_progress = progress.get()
   if(last_progress >= 100):
     current_song.set("Download complete")
+    messagebox.showinfo("Success","Successfully downloaded " + str(current_downloaded) + " songs")
   progress.set(100)
   progress_text.set("")
   break_button.place_forget()
