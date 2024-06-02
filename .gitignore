@@ -1,1 +1,4 @@
 .venv
+build
+dist
+download_from_url.spec

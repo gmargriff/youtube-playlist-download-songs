@@ -1,3 +1,4 @@
+altgraph==0.17.4
 asttokens==2.4.1
 attrs==23.2.0
 backcall==0.2.0
@@ -41,6 +42,8 @@ prompt-toolkit==3.0.43
 ptyprocess==0.7.0
 pure-eval==0.2.2
 Pygments==2.18.0
+pyinstaller==6.7.0
+pyinstaller-hooks-contrib==2024.6
 python-dateutil==2.9.0.post0
 pytube==15.0.0
 pytube3==9.6.4
@@ -48,6 +51,7 @@ pyzmq==26.0.3
 referencing==0.35.1
 requests==2.32.2
 rpds-py==0.18.1
+setuptools==70.0.0
 six==1.16.0
 soupsieve==2.5
 stack-data==0.6.3
