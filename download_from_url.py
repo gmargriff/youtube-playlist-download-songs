@@ -1,6 +1,6 @@
 import os, re, math
 import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
+from tkinter import ttk, filedialog, messagebox, font
 from tqdm.auto import tqdm
 from pytube import YouTube, Playlist
 from mutagen.mp4 import MP4
@@ -94,7 +94,7 @@ playlist_url_label.place(x=10, y=5)
 playlist_url = tk.StringVar()
 playlist_url.set("https://www.youtube.com/playlist?list=PLqDLcuYrEYqmL29OPnHZ26XRYT6A2FzSK")
 playlist_url_entry = tk.Entry(window, textvariable=playlist_url)
-playlist_url_entry.place(x=10, y=25, width=780)
+playlist_url_entry.place(x=10, y=25, width=780, height=25)
 
 # Dest folder field
 dest_folder_label = tk.Label(text="Select destination folder:")
@@ -103,15 +103,15 @@ dest_folder_label.place(x=10, y=45)
 dest_folder = tk.StringVar()
 dest_folder.set("./")
 dest_folder_entry = tk.Entry(window, textvariable=dest_folder)
-dest_folder_entry.place(x=10, y=65, width=690)
+dest_folder_entry.place(x=10, y=65, width=690, height=25)
 
 ## Dest folder button
-dest_folder_button = tk.Button(text="Select folder", command=lambda: destination_folder())
-dest_folder_button.place(x=710, y=60)
+dest_folder_button = tk.Button(text="Select folder", font = tk.font.Font(size = 8), command=lambda: destination_folder())
+dest_folder_button.place(x=710, y=65, width=80, height=25)
 
 ## Download button
 download_button = tk.Button(text="Download playlist", command=lambda: download_playlist_from_url(playlist_url.get()))
-download_button.place(x=190, y=95, width=400)
+download_button.place(x=190, y=95, width=400, height=25)
 
 # Current downloading
 current_song = tk.StringVar()
